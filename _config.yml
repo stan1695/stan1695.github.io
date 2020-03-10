@@ -1,12 +1,13 @@
 # ---------------------------------------------------------------
 # Jekyll & Global Configuration
 ## Docs: https://jekyllrb.com/docs/configuration/
+# demo: https://simpleyyt.com/jekyll-theme-next/
 # ---------------------------------------------------------------
 
 # Site
 title: STAN THE MAN
-subtitle:
-description:
+subtitle: 
+description: Ever Tried. Ever Failed. No Matter. Try Again. Fail Again. Fail better.
 author: Stan Huang
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en

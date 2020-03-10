@@ -1,3 +1,11 @@
+---
+title: Semaphore 信号量
+categories: 线程
+tags: 
+ - 多线程
+ - Semaphore
+---
+
 # Semaphore
 * 信号量，设计思路如下: 一个阻塞队列，一个信号量，3个信号量方法。改变信号量的方法应该是原子性的，也就是下面的down up方法应原子性的。
 * Init()计数器的初始值

@@ -1,3 +1,11 @@
+---
+title: spring boot
+categories: spring
+tags: 
+ - spring
+ - spring boot
+---
+
 org.springframework.context.ApplicationContextInitializer
 org.springframework.context.ApplicationListener
 

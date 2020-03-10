@@ -1,3 +1,11 @@
+---
+title: CyclicBarrier循环栅栏
+categories: 线程
+tags: 
+ - 多线程
+ - CyclicBarrier
+---
+
 * CyclicBarrier:字面意思“循环栅栏”，可循环屏障。
 * 作用就是让所有的线程等待执行完，再进行下一步。
 * 怎么使用：

@@ -1,3 +1,11 @@
+---
+title: ThreadLocal 线程副本
+categories: 线程
+tags: 
+ - 多线程
+ - ThreadLocal
+---
+
 * ThreadLocal是一个线程本地变量。
 * ThreadLocal里面有个内部类，ThreadLocalMap,用来存储线程副本。ThreadLocalMap里面的数据结构是一个Entry<k，v>一个弱引用。
 * 比如有一个共享变量，private static final ThreadLocal t = new ThreadLocal();

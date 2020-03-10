@@ -1,3 +1,11 @@
+---
+title: CountDownLatch计数器
+categories: 线程
+tags: 
+ - 多线程
+ - CountDownLatch
+---
+
 # CountDownLatch  
 
 * 计数器，java.util.concurrent.CountDownLatch基于AQS实现，关键的方法wait,countDown  

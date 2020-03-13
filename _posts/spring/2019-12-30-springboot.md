@@ -89,7 +89,11 @@ TestService testService =ctx.getBean(TestService.class);
 
 > 3、执行监听器(this.prepareEnvironment)
 
-![image1]()  ![image2]()
+![spring-boot-start](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-boot-start.jpg?raw=true)  
+
+![image1](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-nitializers.png?raw=true)  ![image2](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-initclass.png?raw=true)  
+
+![image3](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/springApplication-listener.png?raw=true)  ![image3](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-listener.png?raw=true)
 
 
 ## 参考文献

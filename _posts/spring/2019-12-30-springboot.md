@@ -6,30 +6,25 @@ tags:
  - spring boot
 ---
 
-## spring boot启动过程
-
-* springboot 是否启动成web项目还是Standalone（独立的）的项目，取决于classpath中是否含有javax.servlet.Servlet, org.springframework.web.context.ConfigurableWebApplicationContext这两个类。
-* ConfigurableWebApplicationContext这个类是在spring-web包中
-* 第二步，初始化加载classpath下的所有的可用的ApplicationListener  
-* 第三步，初始化加载main方法所在类  
-* 第四步，运行run方法
-* 第五步，根据第二步的结果判断当前运用是否是web服务来加载容器，如果是web服务则加载org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext类，如果不是web项目则加载org.springframework.context.annotation.AnnotationConfigApplicationContext类，然后在初始化创建一个容器类对象。  
-* 创建上下文，刷新上下文
-
 
 ![spring-boot-start](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-boot-start.jpg?raw=true)  
 
 ## springboot 启动 
-初始化springApplication
+1、初始化springApplication
 > 1、加载初始化启动类(this.setInitializers)，通过方法this.getSpringFactoriesInstances（）从各个jar或项目中查找/META-INF/spring.factories文件中key为org.springframework.context.ApplicationContextInitializer的类，只是把这些类加载进来，还没有执行类里面的初始化方法，如下图  
-> 2、加载监听器（this.setListeners），通过方法this.getSpringFactoriesInstances（）从各个jar或项目中查找/META-INF/spring.factories文件中key为org.springframework.context.ApplicationListener的类
+> 
+> 2、加载监听器（this.setListeners），通过方法this.getSpringFactoriesInstances（）从各个jar或项目中查找/META-INF/spring.factories文件中key为org.springframework.context.ApplicationListener的类  
+> 
 > 以上两步是组装springApplication对象的准备工作
 
 
 > 3、开始实例化run监听器（这个监听器跟随springboot整个启动过程）  
-> SpringApplicationRunListeners listeners = this.getRunListeners(args);  
-> this.getRunListeners > this.getSpringFactoriesInstances(org.springframework.boot.SpringApplicationRunListener)找/META-INF/spring.factories文件中key为org.springframework.boot.SpringApplicationRunListener的类  
-
+> * SpringApplicationRunListeners listeners = this.getRunListeners(args);  
+> * this.getRunListeners > this.getSpringFactoriesInstances(org.springframework.boot.SpringApplicationRunListener)找/META-INF/spring.factories文件中key为org.springframework.boot.SpringApplicationRunListener的类  
+> * 比如appollo的配置（CustomApolloEnvInit）就是这个SpringApplicationRunListeners的子类
+> * EventPublishingRunListener这个类也是SpringApplicationRunListeners的子类，这个类的作用就是代理调用第二步SpringApplication的监听器，然后调用ApplicationListener的onApplicationEvent方法
+> * 如果listteners里面有多个监听器，执行的时候会多个遍历执行
+> 
 ```
     package org.springframework.boot;
     public interface SpringApplicationRunListener {
@@ -53,9 +48,22 @@ tags:
 
 > 我们可以自定义SpringApplicationRunListener来监听springboot启动过程。（实现该接口，然后在/META-INF/spring.factories配置上实现类，把自定义的监听器暴露出来）
 
-> 3、执行监听器(this.prepareEnvironment)
+2、准备环境(this.prepareEnvironment)  
+>
+> * SpringApplicationRunListeners执行environmentPrepared，所以就会代理调用到一个叫做ConfigFileApplicationListener的ApplicationListener  
+> * loadPostProcessors方法 org.springframework.boot.env.EnvironmentPostProcessor=\
+> * 获取本地配置文件，apollo配置文件等等，详见[apollo配置环境说明图片]()  
+
+3、绘制banner图
+
+4、创建运用上下文
 
 
+判断是不是web运用
+> 能够成功加载（class.forname）这两个类private static final String[] WEB_ENVIRONMENT_CLASSES = new String[]{"javax.servlet.Servlet", "org.springframework.web.context.ConfigurableWebApplicationContext"};说明就是web服务
+
+deduce是判断、推断的意思
+> springboot启动初始化是有两个判断deduceWebEnvironment判断是否是web运用，deduceMainApplicationClass推断main方法类
 
 ![image1](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-nitializers.png?raw=true)
 ![image2](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-initclass.png?raw=true)  

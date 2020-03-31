@@ -19,8 +19,8 @@ tags:
 * String bootClassPath = System.getProperty("sun.boot.class.path"); //负责加载路径
   
 ```
--Xbootclasspath/a:D:\yyfax\CODE\SOLID\GIT_bash\SOLID-Repay\SOLID-Repay-core\src\main\java\java1\lang
--Xbootclasspath/b:D:\yyfax\CODE\SOLID\GIT_bash\SOLID-Repay\SOLID-Repay-core\src\main\java\java1\lang
+-Xbootclasspath/a:D:\pay-core\src\main\java\java1\lang
+-Xbootclasspath/b:D:\pay-core\src\main\java\java1\lang
 
 打jar包：jar cfm test.jar h.mf System1.class
 要先创建一个头文件h.mf

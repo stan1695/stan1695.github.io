@@ -219,7 +219,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  LinkLabel: Link
+  GitHub: https://github.com/stan1695/stan1695.github.io
 
 
 # Social Links Icons
@@ -231,7 +231,7 @@ social_icons:
   enable: true
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
-  GitHub: https://github.com/stan1695/stan1695.github.io
+  GitHub: github
   Twitter: twitter
   Weibo: weibo
 
@@ -378,7 +378,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics:0c9904f941701b02dbb8495ec4dc56db
+baidu_analytics: 0c9904f941701b02dbb8495ec4dc56db
 
 # Duoshuo ShortName
 #duoshuo_shortname:

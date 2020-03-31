@@ -3,7 +3,7 @@
 ## Docs: https://jekyllrb.com/docs/configuration/
 # demo: https://simpleyyt.com/jekyll-theme-next/
 # ---------------------------------------------------------------
-baidu-analysis: 0c9904f941701b02dbb8495ec4dc56db
+
 # Site
 title: STAN THE MAN
 subtitle: 
@@ -378,7 +378,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics:0c9904f941701b02dbb8495ec4dc56db
 
 # Duoshuo ShortName
 #duoshuo_shortname:

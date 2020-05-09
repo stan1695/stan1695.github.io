@@ -23,7 +23,7 @@ tags:
 > * this.getRunListeners > this.getSpringFactoriesInstances(org.springframework.boot.SpringApplicationRunListener)找/META-INF/spring.factories文件中key为org.springframework.boot.SpringApplicationRunListener的类  
 > * 比如appollo的配置（CustomApolloEnvInit）就是这个SpringApplicationRunListeners的子类
 > * EventPublishingRunListener这个类也是SpringApplicationRunListeners的子类，这个类的作用就是代理调用第二步SpringApplication的监听器，然后调用ApplicationListener的onApplicationEvent方法
-> * 如果listteners里面有多个监听器，执行的时候会多个遍历执行
+> * 如果listteners里面有多个监听器，执行的时候会多个遍历执行  
 
 ```
     package org.springframework.boot;

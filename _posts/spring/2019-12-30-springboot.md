@@ -7,7 +7,7 @@ tags:
 ---
 
 
-![spring-boot-start](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-boot-start.jpg?raw=true)  
+![spring-boot-start](../image/spring-boot-start.jpg?raw=true)  
 
 ## springboot 启动 
 1、初始化springApplication
@@ -24,7 +24,7 @@ tags:
 > * 比如appollo的配置（CustomApolloEnvInit）就是这个SpringApplicationRunListeners的子类
 > * EventPublishingRunListener这个类也是SpringApplicationRunListeners的子类，这个类的作用就是代理调用第二步SpringApplication的监听器，然后调用ApplicationListener的onApplicationEvent方法
 > * 如果listteners里面有多个监听器，执行的时候会多个遍历执行
-> 
+
 ```
     package org.springframework.boot;
     public interface SpringApplicationRunListener {

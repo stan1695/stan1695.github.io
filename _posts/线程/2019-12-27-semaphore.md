@@ -6,7 +6,8 @@ tags:
  - Semaphore
 ---
 
-# Semaphore
+#### Semaphore  
+
 * 信号量，设计思路如下: 一个阻塞队列，一个信号量，3个信号量方法。改变信号量的方法应该是原子性的，也就是下面的down up方法应原子性的。
 * Init()计数器的初始值
 * up()计数器的值加1。如果此时计数器值的<=0,则唤醒等待队里的一个线程，并从等待队列中移除
@@ -54,3 +55,7 @@ tags:
 ```
 
 * java.util.concurrent.Semaphore就是基于AQS实现的(与entrantlock类似)，acquire()方法实现信号量模型的down()方法。relase()方法实现信号量模型的up()方法。
+
+#### 参考
+
+* https://www.jianshu.com/p/db4cf665cd31  

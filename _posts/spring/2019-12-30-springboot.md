@@ -7,7 +7,7 @@ tags:
 ---
 
 
-![spring-boot-start](../image/spring-boot-start.jpg?raw=true)  
+![spring-boot-start](../image/spring-boot-start.jpg)  
 
 ## springboot 启动 
 1、初始化springApplication
@@ -67,7 +67,7 @@ deduce是判断、推断的意思
 
 ![image1](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-nitializers.png?raw=true)
 ![image2](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-initclass.png?raw=true)  
-![image3](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/springApplication-listener.png?raw=true)  ![image3](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-listener.png?raw=true)
+![image3](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/springApplication-listener.png?raw=true) ![image4](https://github.com/stan1695/stan1695.github.io/blob/master/_posts/image/spring-listener.png?raw=true)
 
 ##  spring boot配置内部tomcat
 

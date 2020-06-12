@@ -30,21 +30,22 @@ tags:
 
 * BlockingQueue
   
-   * ArrayBlockingQueue  
-   * LinkedBlockingQueue
-   * PriorityBlockingQueue
-   * DelayQueue
-   * SynchronousQueue
-  
-* Deque
-* SynchronizedQueue
-* ConcurrentLinkedQueue
-* PriorityQueue
+> ArrayBlockingQueue  
+> LinkedBlockingQueue
+> PriorityBlockingQueue
+> DelayQueue
+> SynchronousQueue
+ 
+> Deque
+> SynchronizedQueue
+> ConcurrentLinkedQueue
+> PriorityQueue
 
 ## map  
 
-* HashMap
-* ConcurrentMap
-* LinkedHashMap
-* Hashtable
-* SortedMap
+> HashMap
+> HashMap线程不安全方面，主要体现在put的时候导致数据不一致。线程A和B,A希望插入一对key-value,
+> ConcurrentMap
+> LinkedHashMap
+> Hashtable
+> SortedMap

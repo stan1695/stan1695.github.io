@@ -1,4 +1,4 @@
-package com.yylending.solid;
+package com;
 
 import java.util.BitSet;
 import java.util.HashSet;

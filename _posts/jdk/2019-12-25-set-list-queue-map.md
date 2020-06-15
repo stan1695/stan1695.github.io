@@ -44,8 +44,8 @@ tags:
 ## map  
 
 > HashMap
-> HashMap线程不安全方面，主要体现在put的时候导致数据不一致。线程A和B,A希望插入一对key-value,
-> ConcurrentMap
+> HashMap线程不安全方面，主要体现在put的时候导致数据不一致。线程A和B,A希望插入一对key-value,分配到hash槽中，但是B线程同时也插入一个key-value到A线程相同的hash槽中，如果AB两个线程同时进行的话，很有可能会出现被覆盖的情况。  
+> ConcurrentHashMap>ConcurrentMap
 > LinkedHashMap
 > Hashtable
 > SortedMap

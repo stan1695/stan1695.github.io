@@ -58,6 +58,7 @@ tags:
 > 因为String 是final的，所以在可以将String字符串存入常量池中。
 
 ## 常量池
+
 > String 作为大量频繁使用的对象，在创建的时候如果跟普通对象一样，不做优化处理，就可能极大影响程序的性能。
 > jvm 为了提高性能，减少开销，在实例化字符串常量的时候进行了一下优化。
 
@@ -157,6 +158,38 @@ public static void main(String[] args){
    2.在当s1调用intern()方法时，会发现常量池已经有了123对象，就会直接把123的常量给返回出去，但是由于返回值并没有接收，所以此时s1还是堆中地址，则输入false；如果代码换成  s1 = s1.intern();那s1就会重新指向常量池了，那输出就为true。
 ```
 
+## StringBuilder和StringBuffer
+
+```
+
+//StringBuilder
+@Override
+public StringBuilder append(String str) {
+    super.append(str);
+    return this;
+}
+
+public AbstractStringBuilder append(String str) {
+        if (str == null)
+            return appendNull();
+        int len = str.length();
+        ensureCapacityInternal(count + len);
+        str.getChars(0, len, value, count);
+        count += len;
+        return this;
+}
+
+// count + len 和 count += len不是原子操作，在多线程的时候，会出现线程不安全现象，比如A B两个线程同时进来，这是count是10，假设len是1，这是同时进行count+len可能两个线程都是11,但是准确的应该是一个是11，一个是12.，如果两个都是算成11的话，还会出现下标越界的情况。
+
+//而StringBuffer确实一个线程安全的类
+@Override
+public synchronized StringBuffer append(String str) {
+    toStringCache = null;
+    super.append(str);
+    return this;
+}
+
+```
 
 ## 参考资料
  > https://blog.csdn.net/z1790424577/article/details/83788791

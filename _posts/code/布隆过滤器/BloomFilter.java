@@ -72,10 +72,12 @@ public class BloomFilter {
         int st=0;
         BloomFilter filter = new BloomFilter();
         Set<Integer> set = new HashSet<>();
-        while (i<200){
+        while (i<10000){
             Random random = new Random();
             int a = random.nextInt();
-            boolean b = filter.contains(String.valueOf(a));
+            //boolean b = filter.contains(String.valueOf(a));
+            com.google.common.hash.BloomFilter guava = com.google.common.hash.BloomFilter.create(Funnels.integerFunnel(), 1);
+            boolean b = guava.mightContain(a);
             if(b){
                 bt++;
             }
@@ -84,12 +86,13 @@ public class BloomFilter {
                 st ++;
             }
 //            System.out.println(b + ":" +a);
-            filter.add(String.valueOf(a));
+            //filter.add(String.valueOf(a));
+            guava.put(a);
             set.add(a);
             i++;
         }
-        System.out.println(bt);
-        System.out.println(st);
-        System.out.println(set.size());
+        System.out.println("布隆判断存在的数据量："+bt);
+        System.out.println("布隆判断判断正确的数量："+st);
+        System.out.println("样本总数:"+set.size());
     }
 }

@@ -57,7 +57,7 @@ spring boot启动时 有一步是刷新上下文，入口就是 `org.springframe
 
 * 8、`initApplicationEventMulticaster();` 如果beanFactory中有ApplicationEventMulticaster实现类，则实例化该类，如果没有则添加一个SimpleApplicationEventMulticaster并实例化它  
 
-* 9、`onRefresh();`该操作，可以进行tomcat容器启动等 
+* 9、`onRefresh();`该操作，可以进行tomcat容器启动等  
 
 * 10、`registerListeners();`将ApplicationListener添加到ApplicationEventMulticaster中去，此时并没有开始实例化监听器
 

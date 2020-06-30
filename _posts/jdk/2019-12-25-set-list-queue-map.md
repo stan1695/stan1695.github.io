@@ -46,7 +46,7 @@ tags:
 > * HashMap线程不安全方面，主要体现在put的时候导致数据不一致。线程A和B,A希望插入一对key-value,分配到hash槽中，但是B线程同时也插入一个key-value到A线程相同的hash槽中，如果AB两个线程同时进行的话，很有可能会出现被覆盖的情况。  
 > HashMap 允许key和value为空
 > * ConcurrentHashMap>ConcurrentMap，不允许key和value为空，`if (key == null || value == null) throw new NullPointerException();`
-> 利用cas（一种无锁操作）+synchronized来保证并发更新的安全性，其他的跟HashMap相通。  
-> LinkedHashMap
-> Hashtable
-> SortedMap
+> * 利用cas（一种无锁操作）+synchronized来保证并发更新的安全性，其他的跟HashMap相通。  
+> * LinkedHashMap
+> * Hashtable
+> * SortedMap
